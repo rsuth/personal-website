@@ -1,0 +1,107 @@
+* {
+  touch-action: manipulation;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.card-cell {
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+
+#scoreboard {
+  height: 1.2em;
+  font-size: 1.1em;
+}
+
+#message {
+  font-weight: 600;
+  height: 1.2em;
+  visibility: hidden;
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+#message.show {
+  visibility: visible; /* Show the message */
+  /* Add animation: Take 0.2 seconds to fade in and out the message.
+  However, delay the fade out process for 1 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 1s;
+  animation: fadein 0.5s, fadeout 0.5s 1s;
+}
+
+/* Animations to fade in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+#cards-container {
+  width: 616px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px 8px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . .";
+  margin-top: 10px;
+}
+
+.card-cell img {
+  width: 175px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 0px;
+}
+
+.selected {
+  border: 1px solid rgb(66, 210, 247);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media all and (max-width: 450px) {
+  #cards-container {
+      width: 346px;
+      gap: 4px 4px;
+  }
+  
+  .card-cell img {
+      width: 110px;
+  }
+}

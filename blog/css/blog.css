@@ -1,0 +1,17 @@
+.blog-index {
+  list-style: none;
+  padding: 0;
+  margin-top: 2em;
+}
+
+.blog-index li {
+  margin-bottom: .5em;
+  display: flex;
+  gap: 1em;
+}
+
+
+
+p {
+  margin: 20px 0;
+}

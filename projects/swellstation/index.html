@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Rick Sutherland" />
+  <title>Rick Sutherland</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Signika:wght@300..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-group">
+        ⊙
+        <a href="/">/about</a>
+        <a href="/blog/index.html">/blog</a>
+      </div>
+      <div class="nav-group">
+        <a href="github.com/rsuth">
+          <img src="/img/github-mark.svg" width="22px" alt="github" />
+        </a>
+      </div>
+    </nav>
+    <h1>rick sutherland</h1>
+    <hr>
+  </header>
+  <main>
+    <a href="/">back</a>
+    <h2>swell station</h2>
+    <section>
+      <figure>
+        <img src="img/swellstation-photo.jpg" width="400px" alt="photo of swellstation" />
+        <figcaption>swellstation</figcaption>
+      </figure>
+      <p>
+        SwellStation is an internet connected oceanic conditions monitoring
+        station. The station is meant to provide at-a-glance information that is
+        relevant for surfing.
+      </p>
+      <p>
+        Specifically, the device displays current dominant swell height (ft) and
+        period (seconds) using 2 analog voltmeter needle displays. The data is
+        pulled from the NOAA’s <a href="https://www.ndbc.noaa.gov/">National Data Buoy Center</a>, which is a network of
+        ocean buoys that constantly monitor ocean
+        conditions, with observations being posted online for public use.
+      </p>
+      <p>
+        The controller for the device is a <a href="https://docs.particle.io/photon/">Particle Photon</a>. The case is
+        made of black walnut and plywood.
+      </p>
+      <p>Here is a diagram of how it works:</p>
+      <figure>
+        <img src="img/swellstation-diagram.jpg" />
+        <figcaption>swellstation diagram</figcaption>
+      </figure>
+      <p>
+        SwellStations backend is an API built using the Flask framework. The backend
+        scrapes data from the NDBC periodically, and then sends a post request to
+        the swellstation with the data. The Swellstation uses PWM to control the
+        dials on the voltmeters.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <hr>
+    <a href="/">⊙</a>
+  </footer>
+</body>
