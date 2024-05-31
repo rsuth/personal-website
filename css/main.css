@@ -162,3 +162,8 @@ figure img {
   width: 100%;
 }
 
+#dark-mode-toggle {
+	cursor: pointer;
+	font-size: 0.8em;
+}
+
