@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (localStorage.getItem("theme") === "dark") {
     htmlElement.setAttribute("data-theme", "dark");
     toggleButton.textContent = "light mode";
+    setGithubMark("dark");
   } else {
     toggleButton.textContent = "dark mode";
+    setGithubMark("light");
   }
 
   // Toggle dark mode on button click
@@ -16,12 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
       htmlElement.removeAttribute("data-theme");
       localStorage.setItem("theme", "light");
       toggleButton.textContent = "dark mode";
+      setGithubMark("light");
     } else {
       htmlElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
       toggleButton.textContent = "light mode";
+      setGithubMark("dark");
     }
   });
 });
 
-function replaceGithubMark() {}
+function setGithubMark(s) {
+  const githubMark = document.getElementById("github-mark");
+  if (s === "dark") {
+    githubMark.src = "/img/github-mark-white.svg";
+  } else {
+    githubMark.src = "/img/github-mark.svg";
+  }
+}
